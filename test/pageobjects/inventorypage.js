@@ -17,16 +17,22 @@ class InventoryPage extends BasePage {
     /*************
      * product-price-steps
      */
-    async readProductPrice() {
+    async readProductPrice(randomIndex) {
         let selectorItemPrice = this.itemPriceText;
-        let inventoryPrice = await driver.findElement(selectorItemPrice).getText();
-        // console.log('inventoryPrice: '+inventoryPrice);
-        return inventoryPrice;
+        let inventoryPrices = await driver.findElements(selectorItemPrice);
+
+        return await inventoryPrices[randomIndex].getText();
+
+        // for(let i=0; i<inventoryPrices.length; i++) {
+        //     console.log('precios' + i +': '+ await inventoryPrices[i].getText());
+        // }
     }
 
-    async clickItem() {
+    async clickItem(randomIndex) {
         let selectorItem = this.item;
-        await driver.findElement(selectorItem).click();
+        let items = await driver.findElements(selectorItem);
+
+        await items[randomIndex].click();
     }
 
     /*************

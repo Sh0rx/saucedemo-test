@@ -9,10 +9,10 @@ class ItemPage extends BasePage {
         this.itemPriceText = By.className('inventory_details_price');
     }
 
-    async readProductPrice() {
+    async readProductPrice(randomIndex) {
         let selectorItemPrice = this.itemPriceText;
         let itemPrice = await driver.findElement(selectorItemPrice).getText();
-        console.log('itemPrice: '+itemPrice);
+        // console.log('itemPrice: '+itemPrice);
         return itemPrice;
     }
 

@@ -7,6 +7,7 @@ const inventoryPage = require('../../pageobjects/inventorypage');
 const itemPage = require('../../pageobjects/itempage');
 
 let inventoryPrice, itemPrice;
+let randomIndex;
 
 Given('I am logged in', async () => {
     await loginPage.openPage(loginPage.url);
@@ -20,12 +21,13 @@ Given('I am on the articles page', async () => {
 });
 
 When('I see the price of a random product', async () => {
-    inventoryPrice = await inventoryPage.readProductPrice();
+    randomIndex = Math.floor(Math.random() * 6);    //Devuelve un indice entre 0 y 5
+    inventoryPrice = await inventoryPage.readProductPrice(randomIndex);
     console.log('inventoryPrice: '+inventoryPrice);
 });
 
 When('I click on the product', async () => {
-    await inventoryPage.clickItem();
+    await inventoryPage.clickItem(randomIndex);
 });
 
 Then('I should see the same price in the product page', async () => {
@@ -52,5 +54,5 @@ After(function () {
 
 AfterAll(async () => {
     console.log("Inside AfterAll");
-    await itemPage.closeBrowser();
+    // await itemPage.closeBrowser();
 });
