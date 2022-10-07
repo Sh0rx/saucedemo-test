@@ -7,14 +7,16 @@ class InventoryPage extends BasePage {
         super();
         this.url = 'https://www.saucedemo.com/inventory.html';
         this.item = By.className('inventory_item_name');
-        // this.itemButton = By.xpath('/html/body/div/div/div/div[2]/div/div/div/div[1]/div[2]/div[1]/a/div');
-        this.itemPriceText = By.xpath('/html/body/div/div/div/div[2]/div/div/div/div[1]/div[2]/div[2]/div');
+        // this.itemPriceText = By.xpath('/html/body/div/div/div/div[2]/div/div/div/div[1]/div[2]/div[2]/div');
+        this.itemPriceText = By.className('inventory_item_price');
 
         this.itemAddToCartButton = By.name('add-to-cart-sauce-labs-backpack');
         this.cartButton = By.id('shopping_cart_container');
     }
 
-    //product-price-steps
+    /*************
+     * product-price-steps
+     */
     async readProductPrice() {
         let selectorItemPrice = this.itemPriceText;
         let inventoryPrice = await driver.findElement(selectorItemPrice).getText();
@@ -27,11 +29,13 @@ class InventoryPage extends BasePage {
         await driver.findElement(selectorItem).click();
     }
 
-    //product-name-steps
+    /*************
+     * product-name-steps
+     */
     async readProductName() {
         let selectorItem = this.item;
         let inventoryName = await driver.findElement(selectorItem).getText();
-        console.log('inventoryName: '+inventoryName);
+
         return inventoryName;
     }
 
