@@ -9,7 +9,7 @@ class InventoryPage extends BasePage {
         this.item = By.className('inventory_item_name');
         this.itemPriceText = By.className('inventory_item_price');
 
-        this.itemAddToCartButton = By.name('add-to-cart-sauce-labs-backpack');
+        this.itemAddToCartButton = By.className('btn btn_primary btn_small btn_inventory');
         this.cartButton = By.id('shopping_cart_container');
 
         this.numProducts;
@@ -50,16 +50,18 @@ class InventoryPage extends BasePage {
     /*************
      * product-name-steps
      */
-    async readProductName() {
+    async readProductName(randomIndex) {
         let selectorItem = this.item;
-        let inventoryName = await driver.findElement(selectorItem).getText();
+        let inventoryNames = await driver.findElements(selectorItem);
 
-        return inventoryName;
+        return await inventoryNames[randomIndex].getText();
     }
 
-    async clickAddToCartButton() {
+    async clickAddToCartButton(randomIndex) {
         let selectorAddToCartBtn = this.itemAddToCartButton;
-        await driver.findElement(selectorAddToCartBtn).click();
+        let addToCartItemButtons = await driver.findElements(selectorAddToCartBtn);
+
+        await addToCartItemButtons[randomIndex].click();
     }
 
     async clickCartButton() {

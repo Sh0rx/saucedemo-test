@@ -22,7 +22,8 @@ Given('I am on the articles page', async () => {
 
 When('I see the price of a random product', async () => {
     numItems = await inventoryPage.getNumItems();
-    randomIndex = Math.floor(Math.random() * 6);    //Devuelve un indice entre 0 y el numero de items
+    randomIndex = Math.floor(Math.random() * numItems);    //Devuelve un indice entre 0 y el numero de items
+    console.log('randomIndex: '+randomIndex);
 
     inventoryPrice = await inventoryPage.readProductPrice(randomIndex);
     console.log('inventoryPrice: '+inventoryPrice);

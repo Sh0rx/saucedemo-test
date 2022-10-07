@@ -8,14 +8,18 @@ const itemPage = require('../../pageobjects/itempage');
 const cartpage = require('../../pageobjects/cartpage');
 
 let inventoryName, cartName;
+let numItems, randomIndex;
 
 When('I see the name of a random product', async () => {
-    inventoryName = await inventoryPage.readProductName();
-    console.log('inventoryName: '+inventoryName);
+    numItems = await inventoryPage.getNumItems();
+    randomIndex = Math.floor(Math.random() * numItems);    //Devuelve un indice entre 0 y el numero de items
+    console.log('randomIndex: '+randomIndex);
+
+    inventoryName = await inventoryPage.readProductName(randomIndex);
 });
 
 When('I add the product to the cart', async () => {
-    await inventoryPage.clickAddToCartButton();
+    await inventoryPage.clickAddToCartButton(randomIndex);
 });
 
 When('I click the cart button', async () => {
