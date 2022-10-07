@@ -7,6 +7,7 @@ class CartPage extends BasePage {
         super();
         this.url = 'https://www.saucedemo.com/cart.html';
         this.product = By.className('inventory_item_name');
+        this.checkoutButton = By.name('checkout');
     }
 
     /*************
@@ -16,6 +17,10 @@ class CartPage extends BasePage {
         let selectorProduct = this.product;
         let cartName = await driver.findElement(selectorProduct).getText(); 
         return cartName;
+    }
+
+    async clickCheckoutButton() {
+        await driver.findElement(this.checkoutButton).click();
     }
 
 }

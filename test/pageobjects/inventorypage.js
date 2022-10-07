@@ -40,6 +40,17 @@ class InventoryPage extends BasePage {
         // }
     }
 
+    async readFloatProductPrice(randomIndex) {
+        let selectorItemPrice = this.itemPriceText;
+        let inventoryPrices = await driver.findElements(selectorItemPrice);
+
+        let inventoryPrice = await inventoryPrices[randomIndex].getText();
+        let formattedInventoryPrice = parseFloat(inventoryPrice.substring(1));
+
+        console.log('parseFloat: '+formattedInventoryPrice);
+        return await formattedInventoryPrice;
+    }
+
     async clickItem(randomIndex) {
         let selectorItem = this.item;
         let items = await driver.findElements(selectorItem);
@@ -61,6 +72,7 @@ class InventoryPage extends BasePage {
         let selectorAddToCartBtn = this.itemAddToCartButton;
         let addToCartItemButtons = await driver.findElements(selectorAddToCartBtn);
 
+        console.log('randomIndex click: '+randomIndex);
         await addToCartItemButtons[randomIndex].click();
     }
 
