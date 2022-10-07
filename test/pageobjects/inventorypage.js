@@ -7,16 +7,28 @@ class InventoryPage extends BasePage {
         super();
         this.url = 'https://www.saucedemo.com/inventory.html';
         this.item = By.className('inventory_item_name');
-        // this.itemPriceText = By.xpath('/html/body/div/div/div/div[2]/div/div/div/div[1]/div[2]/div[2]/div');
         this.itemPriceText = By.className('inventory_item_price');
 
         this.itemAddToCartButton = By.name('add-to-cart-sauce-labs-backpack');
         this.cartButton = By.id('shopping_cart_container');
+
+        this.numProducts;
     }
+
+    // set numProducts(numProducts) {
+    //     let items = await driver.findElements(this.item); 
+    //     this.numProducts = numProducts;
+    // }
 
     /*************
      * product-price-steps
      */
+
+    async getNumItems() {
+        let items = await driver.findElements(this.item);
+        return items.length;
+    }
+
     async readProductPrice(randomIndex) {
         let selectorItemPrice = this.itemPriceText;
         let inventoryPrices = await driver.findElements(selectorItemPrice);
