@@ -13,3 +13,4 @@ Scenario: As a user, I can see the correct final cart price
     And I complete the checkout form
     And I click continue
     Then I should see that the final price is correct
+    And I should see that the taxes applied are 8.00%
