@@ -9,20 +9,23 @@ const cartPage = require('../../pageobjects/cartpage');
 const checkoutPage = require('../../pageobjects/checkoutpage');
 const checkoutOverviewPage = require('../../pageobjects/checkoutoverviewpage');
 
-let numItems, numItemsToAdd;
+let numItems, numItemsToAdd, itemIndexes = [];
 let sumFinalPrice=0, checkoutOverviewFinalPrice;
 
 When('I add a random number of products to the cart', async () => {
     numItems = await inventoryPage.getNumItems();
     numItemsToAdd = Math.floor(Math.random() * numItems);    //Devuelve un numero entre 0 y el numero de items
 
+    itemIndexes = await inventoryPage.getRandomItemIndexes(numItems, numItemsToAdd);
+    console.log(`itemIndexes que voy a AÑADIR: ${itemIndexes}`);
+
     for (let i=0; i<numItemsToAdd; i++) {
-        sumFinalPrice += await inventoryPage.readFloatProductPrice(i);
+        sumFinalPrice += await inventoryPage.readFloatProductPrice(itemIndexes[i]);
         console.log('sumFinalPrice: '+sumFinalPrice);
 
-        console.log('Nombre: '+await inventoryPage.readProductName(0)); //Aqui el indice siempre es el mismo porque al seleccionar
-        await inventoryPage.clickAddToCartButton(0);                    //los elementos el siguiente disponible con el boton add
-    }                                                                   //va a ser el que tiene el índice 0
+        console.log('Nombre: '+await inventoryPage.readProductName((itemIndexes[i]-i))); //Aqui le paso el indice
+        await inventoryPage.clickAddToCartButton((itemIndexes[i]-i));                    
+    }
 
 });
 

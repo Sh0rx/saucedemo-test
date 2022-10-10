@@ -47,8 +47,8 @@ class InventoryPage extends BasePage {
         let inventoryPrice = await inventoryPrices[randomIndex].getText();
         let formattedInventoryPrice = parseFloat(inventoryPrice.substring(1));
 
-        console.log('parseFloat: '+formattedInventoryPrice);
-        return await formattedInventoryPrice;
+        // console.log('parseFloat: ' + formattedInventoryPrice);
+        return formattedInventoryPrice;
     }
 
     async clickItem(randomIndex) {
@@ -72,13 +72,35 @@ class InventoryPage extends BasePage {
         let selectorAddToCartBtn = this.itemAddToCartButton;
         let addToCartItemButtons = await driver.findElements(selectorAddToCartBtn);
 
-        console.log('randomIndex click: '+randomIndex);
+        console.log('randomIndex click: ' + randomIndex);
         await addToCartItemButtons[randomIndex].click();
     }
 
     async clickCartButton() {
         let selectorCartBtn = this.cartButton;
         await driver.findElement(selectorCartBtn).click();
+    }
+
+    async getRandomItemIndexes(numItems, numItemsToAdd) {
+        let itemIndexes = [];
+        // let numItems = await this.getNumItems();
+        // let numItemsToAdd = Math.floor(Math.random() * numItems);    //Devuelve un numero entre 0 y el numero de items
+
+        //Lista de indices de los items [0,1,2,3,4,...]
+        for (let i = 0; i < numItems; i++) {
+            itemIndexes.push(i);
+        }
+        itemIndexes = itemIndexes.sort(function () { return Math.random() - 0.5 }); //Desordeno los items
+
+        //Quito de la lista los items que no voy a añadir
+        for (let i = 0; i < (numItems - numItemsToAdd); i++) {
+            itemIndexes.pop();
+        }
+        
+        //Ordeno la lista de items que voy a añadir
+        itemIndexes.sort();
+
+        return itemIndexes;
     }
 }
 
