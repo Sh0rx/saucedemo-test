@@ -24,7 +24,7 @@ When('I add a random number of products to the cart', async () => {
         console.log('sumItemsTotalPrice: ' + sumItemsTotalPrice);
 
         console.log('Nombre: ' + await inventoryPage.readProductName(itemIndexes[i])); 
-        await inventoryPage.clickAddToCartButton((itemIndexes[i] - i)); //Aqui le paso el indice
+        await inventoryPage.clickAddToCartButton((itemIndexes[i] - i)); //Aqui le paso el indice correspondiente
     }
 
 });

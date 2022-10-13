@@ -1,5 +1,6 @@
 const { By, Key, Builder, until } = require("selenium-webdriver");
 const BasePage = require('./basepage');
+const assert = require('assert');
 
 class InventoryPage extends BasePage {
 
@@ -12,7 +13,8 @@ class InventoryPage extends BasePage {
         this.itemAddToCartButton = By.className('btn btn_primary btn_small btn_inventory');
         this.cartButton = By.id('shopping_cart_container');
 
-        this.numProducts;
+        this.filterButton = By.className('product_sort_container');
+        this.filterOptions = By.css('.product_sort_container > option');
     }
 
     // set numProducts(numProducts) {
@@ -96,12 +98,66 @@ class InventoryPage extends BasePage {
         for (let i = 0; i < (numItems - numItemsToAdd); i++) {
             itemIndexes.pop();
         }
-        
+
         //Ordeno la lista de items que voy a añadir
         itemIndexes.sort();
 
         return itemIndexes;
     }
+
+    /************************
+     * filter-products-steps
+     */
+    async clickFilterButton() {
+        await driver.findElement(this.filterButton).click();
+    }
+
+    async clickFilterOption(filterOption) {
+        let selectorOptions = this.filterOptions;
+        let filterOptions = await driver.findElements(selectorOptions);
+        let flag = false;
+
+        for (let i = 0; i < filterOptions.length; i++) {
+            // console.log('options: ' + await filterOptions[i].getText());
+            try {
+                if (await filterOptions[i].getText() == filterOption) {
+                    console.log('OPCION ENCONTRADA');
+                    flag = true;
+                    await filterOptions[i].click();
+                }
+            } catch {
+                console.error('error selenium');
+            }
+
+        }
+
+        assert.equal(flag, true);
+    }
+
+    async readAllProductNames() {
+        let productNamesList = [];
+        let productNamesObject = await driver.findElements(this.item);
+
+
+        for (let i = 0; i < productNamesObject.length; i++) {
+            productNamesList[i] = await productNamesObject[i].getText();
+        }
+
+        return productNamesList;
+    }
+
+    async readAllProductPrices() {
+        let productPricesList = [], formattedProductPricesList = [];
+        let productPricesObject =  await driver.findElements(this.itemPriceText);
+
+        for (let i=0; i<productPricesObject.length; i++) {
+            productPricesList[i] = await productPricesObject[i].getText();
+            formattedProductPricesList[i] = parseFloat(productPricesList[i].substring(1));
+        }
+
+        return formattedProductPricesList;
+    }
+
 }
 
 module.exports = new InventoryPage();

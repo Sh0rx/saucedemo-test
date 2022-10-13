@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "cucumber-js -f @cucumber/pretty-formatter ./test/features/cart-final-price.feature"
+    "test": "cucumber-js -f @cucumber/pretty-formatter ./test/features/filter-products.feature"
   },
   "keywords": [],
   "author": "",
