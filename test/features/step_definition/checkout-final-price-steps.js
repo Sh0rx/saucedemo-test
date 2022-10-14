@@ -29,21 +29,14 @@ When('I add a random number of products to the cart', async () => {
 
 });
 
-When('I click the checkout button', async () => {
-    await cartPage.clickCheckoutButton();
-});
-
-When('I complete the checkout form', async () => {
+When('I complete the checkout', async () => {
     let firstName = 'Manolo';
     let lastName = 'Garcia';
     let postalCode = '37001'
+    await cartPage.clickCheckoutButton();
     await checkoutPage.completeForm(firstName, lastName, postalCode);
-});
-
-When('I click continue', async () => {
     await checkoutPage.clickContinueButton();
 });
-
 
 Then('I should see that the final price is correct', async () => {
     let checkoutOverviewFinalPrice = await checkoutOverviewPage.readItemTotalPrice();

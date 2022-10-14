@@ -15,6 +15,9 @@ class InventoryPage extends BasePage {
 
         this.filterButton = By.className('product_sort_container');
         this.filterOptions = By.css('.product_sort_container > option');
+
+        this.burgerButton = By.id('react-burger-menu-btn');
+        this.resetButton = By.id('reset_sidebar_link');
     }
 
     // set numProducts(numProducts) {
@@ -156,6 +159,16 @@ class InventoryPage extends BasePage {
         }
 
         return formattedProductPricesList;
+    }
+
+    /************************
+     * reset-app-state
+     */
+    async resetAppState() {
+        await this.openPage(this.url);
+        await driver.findElement(this.burgerButton).click();
+        await driver.findElement(this.resetButton).click();
+        console.log('Reiniciando estado de la aplicación...\n');
     }
 
 }

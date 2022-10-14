@@ -1,3 +1,4 @@
+@name
 Feature: Product name verification
 
     As a user, I can see the same price of a product both inside

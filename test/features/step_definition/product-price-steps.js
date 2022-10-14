@@ -41,7 +41,9 @@ Then('I should see the same price in the product page', async () => {
     // await itemPage.comparePrice(itemPrice, inventoryPrice);
 });
 
-// BEFORE AND AFTER FUNCTIONS
+/*****************************
+ *BEFORE AND AFTER FUNCTIONS*
+*****************************/
 BeforeAll(async () => {
     console.log("Inside BeforeAll");
     // driver = await new Builder().forBrowser("chrome").build();
@@ -51,8 +53,9 @@ Before(function () {
     console.log("Inside Before");
 });
 
-After(function () {
+After(async () => {
     console.log("Inside After");
+    await inventoryPage.resetAppState();
 });
 
 AfterAll(async () => {

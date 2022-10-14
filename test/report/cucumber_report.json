@@ -1,0 +1,720 @@
+[
+  {
+    "description": "    As a user, I can filter the products alphabetically from A\n    to Z or viceversa and by ascending or descending price.",
+    "elements": [
+      {
+        "description": "",
+        "id": "product-order-on-filter-verification;as-a-user,-i-can-order-the-products-by-a-filter-option",
+        "keyword": "Scenario Outline",
+        "line": 7,
+        "name": "As a user, I can order the products by a filter option",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 310699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "I am logged in",
+            "match": {
+              "location": "test\\features\\step_definition\\product-price-steps.js:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1271799600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "I am on the articles page",
+            "match": {
+              "location": "test\\features\\step_definition\\product-price-steps.js:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 199999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 10,
+            "name": "I filter the products by Name (A to Z)",
+            "match": {
+              "location": "test\\features\\step_definition\\filter-products-steps.js:8"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 511851799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 11,
+            "name": "I should see that the products are ordered correctly according to Name (A to Z)",
+            "match": {
+              "location": "test\\features\\step_definition\\filter-products-steps.js:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 84801400
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 274565599
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@filter",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "product-order-on-filter-verification;as-a-user,-i-can-order-the-products-by-a-filter-option",
+        "keyword": "Scenario Outline",
+        "line": 7,
+        "name": "As a user, I can order the products by a filter option",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 200399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "I am logged in",
+            "match": {
+              "location": "test\\features\\step_definition\\product-price-steps.js:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 182879299
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "I am on the articles page",
+            "match": {
+              "location": "test\\features\\step_definition\\product-price-steps.js:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 497399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 10,
+            "name": "I filter the products by Name (Z to A)",
+            "match": {
+              "location": "test\\features\\step_definition\\filter-products-steps.js:8"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 244495300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 11,
+            "name": "I should see that the products are ordered correctly according to Name (Z to A)",
+            "match": {
+              "location": "test\\features\\step_definition\\filter-products-steps.js:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 80230999
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 231880699
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@filter",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "product-order-on-filter-verification;as-a-user,-i-can-order-the-products-by-a-filter-option",
+        "keyword": "Scenario Outline",
+        "line": 7,
+        "name": "As a user, I can order the products by a filter option",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 340899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "I am logged in",
+            "match": {
+              "location": "test\\features\\step_definition\\product-price-steps.js:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 183472300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "I am on the articles page",
+            "match": {
+              "location": "test\\features\\step_definition\\product-price-steps.js:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 175399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 10,
+            "name": "I filter the products by Price (low to high)",
+            "match": {
+              "location": "test\\features\\step_definition\\filter-products-steps.js:8"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 275377200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 11,
+            "name": "I should see that the products are ordered correctly according to Price (low to high)",
+            "match": {
+              "location": "test\\features\\step_definition\\filter-products-steps.js:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 79981099
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 230202299
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@filter",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "product-order-on-filter-verification;as-a-user,-i-can-order-the-products-by-a-filter-option",
+        "keyword": "Scenario Outline",
+        "line": 7,
+        "name": "As a user, I can order the products by a filter option",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 157299
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "I am logged in",
+            "match": {
+              "location": "test\\features\\step_definition\\product-price-steps.js:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 178809000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "I am on the articles page",
+            "match": {
+              "location": "test\\features\\step_definition\\product-price-steps.js:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 175400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 10,
+            "name": "I filter the products by Price (high to low)",
+            "match": {
+              "location": "test\\features\\step_definition\\filter-products-steps.js:8"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 243384799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 11,
+            "name": "I should see that the products are ordered correctly according to Price (high to low)",
+            "match": {
+              "location": "test\\features\\step_definition\\filter-products-steps.js:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 81506199
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 263743399
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@filter",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "product-order-on-filter-verification",
+    "line": 2,
+    "keyword": "Feature",
+    "name": "Product order on filter verification",
+    "tags": [
+      {
+        "name": "@filter",
+        "line": 1
+      }
+    ],
+    "uri": "test\\features\\filter-products.feature"
+  },
+  {
+    "description": "    As a user, I can see the same price of a product both inside\n    the inventory page and in the cart page after I add the \n    product to the cart.",
+    "elements": [
+      {
+        "description": "",
+        "id": "product-name-verification;as-a-user,-i-can-see-the-correct-product-name",
+        "keyword": "Scenario",
+        "line": 8,
+        "name": "As a user, I can see the correct product name",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 224099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 9,
+            "name": "I am logged in",
+            "match": {
+              "location": "test\\features\\step_definition\\product-price-steps.js:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 182807799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 10,
+            "name": "I am on the articles page",
+            "match": {
+              "location": "test\\features\\step_definition\\product-price-steps.js:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 140599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 11,
+            "name": "I see the name of a random product",
+            "match": {
+              "location": "test\\features\\step_definition\\product-name-steps.js:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 115559900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "I add the product to the cart",
+            "match": {
+              "location": "test\\features\\step_definition\\product-name-steps.js:21"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 63823599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "I click the cart button",
+            "match": {
+              "location": "test\\features\\step_definition\\product-name-steps.js:25"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 61870399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 14,
+            "name": "I should see the same name of the product in the cart page",
+            "match": {
+              "location": "test\\features\\step_definition\\product-name-steps.js:29"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 22708099
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 233704600
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@name",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "product-name-verification",
+    "line": 2,
+    "keyword": "Feature",
+    "name": "Product name verification",
+    "tags": [
+      {
+        "name": "@name",
+        "line": 1
+      }
+    ],
+    "uri": "test\\features\\product-name.feature"
+  },
+  {
+    "description": "    As a user, I can see the same price of a product both inside\n    the inventory page and in the product page.\n\n    As a user, I can add several products to the cart and when\n    I complete the checkout, the final price should be the total\n    sum of the product prices displayed on the inventory page\n    and the taxes should be applied correctly.",
+    "elements": [
+      {
+        "description": "",
+        "id": "product-price-verification;as-a-user,-i-can-see-the-correct-product-price",
+        "keyword": "Scenario",
+        "line": 16,
+        "name": "As a user, I can see the correct product price",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 490200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 13,
+            "name": "I am logged in",
+            "match": {
+              "location": "test\\features\\step_definition\\product-price-steps.js:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 176613999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "I am on the articles page",
+            "match": {
+              "location": "test\\features\\step_definition\\product-price-steps.js:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 111699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 19,
+            "name": "I see the price of a random product",
+            "match": {
+              "location": "test\\features\\step_definition\\product-price-steps.js:23"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 129196900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 20,
+            "name": "I click on the product",
+            "match": {
+              "location": "test\\features\\step_definition\\product-price-steps.js:32"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 49441400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 21,
+            "name": "I should see the same price in the product page",
+            "match": {
+              "location": "test\\features\\step_definition\\product-price-steps.js:36"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 35765199
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 265398299
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@price",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "product-price-verification;as-a-user,-i-can-see-the-correct-final-checkout-price",
+        "keyword": "Scenario",
+        "line": 24,
+        "name": "As a user, I can see the correct final checkout price",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 183899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 13,
+            "name": "I am logged in",
+            "match": {
+              "location": "test\\features\\step_definition\\product-price-steps.js:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 179488399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "I am on the articles page",
+            "match": {
+              "location": "test\\features\\step_definition\\product-price-steps.js:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 162199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 27,
+            "name": "I add a random number of products to the cart",
+            "match": {
+              "location": "test\\features\\step_definition\\checkout-final-price-steps.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 197038500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 28,
+            "name": "I click the cart button",
+            "match": {
+              "location": "test\\features\\step_definition\\product-name-steps.js:25"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 36734699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 32,
+            "name": "I complete the checkout",
+            "match": {
+              "location": "test\\features\\step_definition\\checkout-final-price-steps.js:32"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 260967599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 33,
+            "name": "I should see that the final price is correct",
+            "match": {
+              "location": "test\\features\\step_definition\\checkout-final-price-steps.js:41"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 22655900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 34,
+            "name": "I should see that the taxes applied are 8.00%",
+            "match": {
+              "location": "test\\features\\step_definition\\checkout-final-price-steps.js:47"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 51421099
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 290024699
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@price",
+            "line": 1
+          },
+          {
+            "name": "@checkout",
+            "line": 23
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "product-price-verification",
+    "line": 2,
+    "keyword": "Feature",
+    "name": "Product price verification",
+    "tags": [
+      {
+        "name": "@price",
+        "line": 1
+      }
+    ],
+    "uri": "test\\features\\product-price.feature"
+  }
+]

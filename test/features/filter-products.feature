@@ -1,9 +1,10 @@
+@filter
 Feature: Product order on filter verification
 
     As a user, I can filter the products alphabetically from A
     to Z or viceversa and by ascending or descending price.
 
-    Scenario Outline: As a user, I can order the products by price
+    Scenario Outline: As a user, I can order the products by a filter option
         Given I am logged in
         And I am on the articles page
         When I filter the products by <filter option>
