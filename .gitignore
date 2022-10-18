@@ -1,3 +1,7 @@
+# Allure
+allure-report
+allure-results
+
 # Logs
 logs
 *.log
